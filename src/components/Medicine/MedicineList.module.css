@@ -1,0 +1,66 @@
+/* MedicineList.module.css */
+
+/* Define styles for the MedicineList component */
+.MedicineList {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 10px;
+}
+
+.MedicineList h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.MedicineList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.MedicineList li {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Align items to the start of the column */
+}
+
+/* Style for individual details */
+.MedicineList .MedicineName {
+  font-weight: bold;
+}
+
+.MedicineList .MedicineDescription {
+  font-style: italic;
+}
+
+.MedicineList .MedicinePrice {
+  color: #007bff;
+}
+
+.MedicineList .MedicineQuantity {
+  color: green;
+}
+
+/* Style for the Add to Cart button */
+.MedicineList .AddToCartButton {
+  margin-top: auto;
+  /* Push the button to the bottom of the list item */
+  align-self: flex-end;
+  /* Align the button to the right of the list item */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.MedicineList .AddToCartButton:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+/* Additional styles as needed */

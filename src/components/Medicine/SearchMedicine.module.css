@@ -1,0 +1,56 @@
+/* SearchMedicine.module.css */
+
+/* Define styles for the SearchMedicine component */
+.SearchMedicine {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+  }
+  
+  .SearchMedicine h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .SearchMedicine input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .SearchMedicine button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .SearchMedicine button:hover {
+    background-color: #0056b3;
+  }
+  
+  .SearchMedicine ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .SearchMedicine li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .SearchMedicine div {
+    margin-bottom: 5px;
+  }
+  
+  .SearchMedicine button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  
+  /* Additional styles as needed */
+  
