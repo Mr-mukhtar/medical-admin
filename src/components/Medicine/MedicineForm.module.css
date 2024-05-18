@@ -6,6 +6,7 @@
   padding: 20px;
   padding-top: 100px;
   border-radius: 8px;
+  width: 80%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -17,7 +18,7 @@
 
 /* Input field styling */
 .form-input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;

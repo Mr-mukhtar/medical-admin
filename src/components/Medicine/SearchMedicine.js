@@ -1,21 +1,24 @@
-// SearchMedicine.js
-import React, { useState } from 'react';
-import classes from './SearchMedicine.module.css'; // Import the CSS module
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import classes from './SearchMedicine.module.css';
 
 const SearchMedicine = ({ medicineItems, onAddToCart }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleSearch = () => {
-    // Perform the search based on searchTerm
-    const results = medicineItems.filter((medicine) =>
-      medicine.medicine.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
-  };
+  useEffect(() => {
+    if (searchTerm) {
+      const results = medicineItems.filter((medicine) =>
+        medicine.medicine.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchTerm, medicineItems]);
 
   return (
-    <div className={classes.SearchMedicine}> {/* Apply the CSS class to the container */}
+    <div className={classes.SearchMedicine}>
       <h2>Search Medicine</h2>
       <div>
         <input
@@ -24,20 +27,18 @@ const SearchMedicine = ({ medicineItems, onAddToCart }) => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
       </div>
       <ul>
         {searchResults.map((medicine) => (
           <li key={medicine.id}>
             <div>{medicine.medicine}</div>
             <div>{medicine.description}</div>
-            <div>${medicine.price}</div>
+            <div>${medicine.price.toFixed(2)}</div>
             <div>Quantity: {medicine.quantity}</div>
             <button
-              onClick={() => onAddToCart(medicine.id)}
+              onClick={() => onAddToCart(medicine)}
               disabled={medicine.quantity === 0}
-              className={medicine.quantity === 0 ? classes.DisabledButton : ''} 
-              
+              className={medicine.quantity === 0 ? classes.DisabledButton : ''}
             >
               {medicine.quantity === 0 ? 'Out of Stock' : 'Add to Cart'}
             </button>
@@ -46,6 +47,15 @@ const SearchMedicine = ({ medicineItems, onAddToCart }) => {
       </ul>
     </div>
   );
+};
+
+SearchMedicine.propTypes = {
+  medicineItems: PropTypes.array.isRequired,
+  onAddToCart: PropTypes.func.isRequired,
+};
+
+SearchMedicine.defaultProps = {
+  medicineItems: [],
 };
 
 export default SearchMedicine;

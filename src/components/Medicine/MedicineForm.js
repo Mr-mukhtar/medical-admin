@@ -55,7 +55,7 @@ const MedicineForm = ({ onAddMedicine }) => {
         <div>
           <label className={classes['form-label']} htmlFor="medicine">
             Medicine
-          </label>
+          </label> <br/>
           <input
             className={classes['form-input']}
             type="text"
@@ -69,6 +69,7 @@ const MedicineForm = ({ onAddMedicine }) => {
           <label className={classes['form-label']} htmlFor="description">
             Description
           </label>
+          <br/>
           <input
             className={classes['form-input']}
             type="text"
@@ -82,6 +83,7 @@ const MedicineForm = ({ onAddMedicine }) => {
           <label className={classes['form-label']} htmlFor="price">
             Price
           </label>
+          <br/>
           <input
             className={classes['form-input']}
             type="number"
@@ -95,6 +97,7 @@ const MedicineForm = ({ onAddMedicine }) => {
           <label className={classes['form-label']} htmlFor="quantity">
             Quantity
           </label>
+          <br/>
           <input
             className={classes['form-input']}
             type="number"

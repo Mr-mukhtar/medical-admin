@@ -1,6 +1,8 @@
 .button {
   cursor: pointer;
   font: inherit;
+  margin-left: 10px;
+ width: 30%;
   border: none;
   background-color: #4d1601;
   color: white;

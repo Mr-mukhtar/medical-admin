@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import CartContext from '../store/cart-context';
+import SearchMedicine from './SearchMedicine';
 import classes from './MedicineList.module.css';
 
 const MedicineList = (props) => {
@@ -15,13 +16,11 @@ const MedicineList = (props) => {
         quantity: medicine.quantity - 1,
       });
 
-      // Instead of managing updatedMedicineItems in local state, you can directly update props.medicineItems
       const updatedItems = [...props.medicineItems];
       const itemIndex = updatedItems.findIndex((item) => item.id === medicine.id);
-      
+
       if (itemIndex !== -1) {
         updatedItems[itemIndex].quantity -= 1;
-        // Update the parent component's medicineItems state
         props.onAddToCart(updatedItems);
       } else {
         console.log(`Medicine with ID ${medicine.id} not found in the list.`);
@@ -31,6 +30,8 @@ const MedicineList = (props) => {
 
   return (
     <div className={classes.MedicineList}>
+       {/* Render the SearchMedicine component and pass props */}
+       <SearchMedicine medicineItems={props.medicineItems} onAddToCart={handleAddToCart} />
       <h2>Medicine List</h2>
       <ul>
         {props.medicineItems.map((medicine) => (
@@ -53,6 +54,8 @@ const MedicineList = (props) => {
           </li>
         ))}
       </ul>
+
+     
     </div>
   );
 };

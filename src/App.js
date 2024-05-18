@@ -22,9 +22,11 @@ function App() {
       <div>
         {cartIsShown && <Cart onClose={hideCartHandler} />}
         <Header onShowCart={showCartHandler} />
+     
         <main>
           <MedicineManager />
         </main>
+       
         <Footer />
       </div>
     </CartProvider>

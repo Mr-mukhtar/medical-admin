@@ -1,3 +1,5 @@
+//MedicineManager .js
+
 import React, { useState } from 'react';
 import MedicineForm from './MedicineForm';
 import MedicineList from './MedicineList';
@@ -67,6 +69,7 @@ const MedicineManager = () => {
     return (
         <div>
             <MedicineForm onAddMedicine={addMedicineHandler} />
+            
             <MedicineList medicineItems={medicineItems} onAddToCart={addToCartHandler} />
         </div>
     );

@@ -1,14 +1,18 @@
+//CartItem.js
+
 import React from 'react';
 import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
-  
   const price = `$${props.price.toFixed(2)}`;
-  const handleRemove = () => {
-    
-    props.onRemove(props.id);
 
-    props.onAddToOriginalList(props);
+  const handleRemove = () => {
+    props.onRemove(props.id);
+   
+  };
+
+  const handleAdd = () => {
+    props.onAdd(props);
   };
 
   return (
@@ -22,9 +26,8 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.actions}>
-        <button  onClick={handleRemove}>-</button>
-        <button onClick={() => props.onAdd(props)}>+</button>
-
+      <button onClick={handleRemove}>-</button>
+        <button onClick={handleAdd}>+</button>
       </div>
     </li>
   );
